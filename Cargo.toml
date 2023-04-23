@@ -1,0 +1,16 @@
+[package]
+name = "nvme-async"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version="1.26", features=["sync"]}
+io-uring = { version = "0.5.12", features = ["unstable"] }
+io-uring-async = { git = "https://github.com/thomasbarrett/io-uring-async", rev = "6677f17" }
+send_wrapper = { version = "0.6.0" }
+nix = { version = "0.26.2", features = ["sched"] }
+zerocopy = "0.6.1"
+bdev-async = { git = "ssh://git@github.com/thomasbarrett/bdev-async.git", rev = "c867b38" }
+async-trait = "0.1.68"
